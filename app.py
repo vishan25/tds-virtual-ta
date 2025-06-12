@@ -291,7 +291,7 @@ async def find_similar_content(query_embedding, conn):
             temp_results.sort(key=lambda x: x["similarity"], reverse=True)
             return temp_results[:3]
 
-        # Group by source aind keep top chunks
+        # Group by source and keep top chunks
         grouped_results = {}
         for result in results:
             key = f"{result['source']}_{result.get('post_id', result.get('title'))}"
